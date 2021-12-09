@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { getPriceInfo, getUniqueName } from '../utils/helps';
 
 
 // 앱이 켜질때 구동하는 fetch 함수
@@ -21,6 +22,7 @@ const useFetchProducts=(apiendPoint)=> {
         }
         setLoading(false);
     }
+
 
     useEffect(()=>{
         getData();
