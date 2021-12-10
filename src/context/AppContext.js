@@ -11,7 +11,7 @@ const AppProvider = ({ children }) => {
     const {filteredProducts,filter,setFilter,resetFilter} = useFilter(products);
     const {models,colors}=useFilterType(products);
 
-  return <AppContext.Provider value={{error,products,isLoading,models,colors,filter,setFilter,resetFilter}}>
+  return <AppContext.Provider value={{error,products,isLoading,models,colors,filter,setFilter,resetFilter,filteredProducts}}>
       {children}
       </AppContext.Provider>;
 };

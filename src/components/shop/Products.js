@@ -4,10 +4,10 @@ import { useAppContext } from "../../context/AppContext";
 import Shoes from "../Shoes";
 
 function Products() {
-  const { error, isLoading, products } = useAppContext();
+  const { error, isLoading, filteredProducts } = useAppContext();
 
   return <Wrapper>
-      {products.map(item=>{
+      {filteredProducts.map(item=>{
         return <Shoes key={item.id} {...item} />
       })}
   </Wrapper>;
