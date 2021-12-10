@@ -1,11 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useAppContext } from "../../context/AppContext";
 import Shoes from "../Shoes";
 
 function Main() {
   const { error, isLoading, products } = useAppContext();
-  console.log(products);
   const mainShoes = products.slice(0, 4);
 
   // 에러 있을경우
@@ -30,12 +30,59 @@ function Main() {
             mainShoes.map((item) => <Shoes key={item.id} {...item} />)}
         </div>
       )}
+      <div className="main__btn">
+        <Link to="/shop" >
+          <button>더보기</button>
+        </Link>
+      </div>
     </Wrapper>
   );
 }
 
 const Wrapper = styled.section`
-  min-height: 60vh;
+  min-height: 40vh;
+  max-width:1200px;
+  margin:4rem auto;
+  .main__title{
+    margin-bottom:2rem;
+    h1{
+      font-size:var(--font-xl);
+      font-weight:bold;
+      margin-bottom:1rem;
+    }
+    p{
+      font-size:var(--font-l);
+      color:var(--color-gry);
+    }
+  }
+  .main__display{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-gap:1rem;
+    margin:1rem 2rem 4rem 2rem;
+  }
+  .main__btn{
+    button{
+      padding:8px 20px;
+      font-size:var(--font-xl);
+    }
+    text-align:center;
+  }
+  @media screen and (max-width:991px){
+    .main__display{
+      grid-template-columns:repeat(2,1fr);
+    }
+  }
+  @media screen and (max-width:768px){
+    .main__title{
+      text-align:center;
+    }
+  }
+  @media screen and (max-width:550px){
+    .main__display{
+      grid-template-columns:1fr;
+    }
+  }
 `;
 
 export default Main;
