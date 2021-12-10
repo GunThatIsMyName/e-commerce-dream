@@ -6,8 +6,6 @@ import Shoes from "../Shoes";
 function Products() {
   const { error, isLoading, products } = useAppContext();
 
-  console.log(products,"@@")
-
   return <Wrapper>
       {products.map(item=>{
         return <Shoes key={item.id} {...item} />

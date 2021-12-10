@@ -1,30 +1,54 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
+import { useAppContext } from "../../context/AppContext";
+import { priceList } from "../../utils/helps";
 
 const Filter = () => {
+  const { models, colors, filter, setFilter,resetFilter } = useAppContext();
+
+  const filterUpdate = (e) => {
+    const {id}=e.target.dataset;
+    const {name}=e.target;
+    setFilter(prev=>{
+      return {...prev,[name]:id}
+    })
+  };
+
   return (
-    <Wrapper>
+    <Wrapper onSubmit={(e) => e.preventDefault()}>
       <div className="filter__row">
         <h5>전체 삭제</h5>
-        <button>Clear All</button>
+        <button onClick={resetFilter} >Clear All</button>
       </div>
       <div className="filter__row">
         <h5>모델</h5>
-        <button>All</button>
-        <button>All</button>
-        <button>All</button>
+        {models.map((item) => {
+          return (
+            <button onClick={filterUpdate} data-id={item} name="models" key={item}>
+              {item}
+            </button>
+          );
+        })}
       </div>
       <div className="filter__row">
         <h5>색상</h5>
-        <button>All</button>
-        <button>red</button>
-        <button>black</button>
-        <button>white</button>
+        {colors.map((item) => {
+          return (
+            <button key={item} data-id={item} onClick={filterUpdate} name="colors">
+              {item}
+            </button>
+          );
+        })}
       </div>
       <div className="filter__row">
         <h5>가격</h5>
-        <button>모든 가격</button>
-        <button>10만원 이상 이하</button>
+        {priceList.map((item) => {
+          return (
+            <button key={item.id} data-id={item.value} onClick={filterUpdate} name="prices">
+              {item.text}
+            </button>
+          );
+        })}
       </div>
     </Wrapper>
   );
