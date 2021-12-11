@@ -33,6 +33,7 @@ function Header() {
 }
 
 const Wrapper = styled.header`
+border-bottom:1px solid var(--color-greyf4);
   .header__box {
     margin: 0 2rem;
     display: flex;

@@ -17,7 +17,7 @@ function Hero() {
       <h1 className="hero__title">Nike Dunk </h1>
       <Link to="/shop" >
       <button>지금 거래하기 👉🏼 </button>
-        </Link>
+      </Link>
     </Wrapper>
   );
 }
@@ -26,7 +26,8 @@ const Wrapper = styled.section`
   min-height: 40vh;
   background: #00765e;
   text-align: center;
-  padding-top:7rem;
+  padding-top:5rem;
+  padding-bottom:2rem;
     .hero__img {
       display: flex;
       justify-content: center;
@@ -40,11 +41,11 @@ const Wrapper = styled.section`
       font-size:var(--font-xxl);
       margin-bottom:2rem;
     }
-    button{
-      border:none;
-      background-color:var(--color-black);
-      color:var(--color-white);
-    }
+      button{
+        border:none;
+        background-color:var(--color-black);
+        color:var(--color-white);
+      }
     @media screen and (max-width:991px){
       background-color:#FFE6D6;
       padding-top:3rem;

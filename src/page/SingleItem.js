@@ -1,11 +1,24 @@
-import React from 'react'
+import React,{useEffect} from 'react'
+import { useParams } from 'react-router-dom';
+import styled from 'styled-components'
+import { useItemContext } from '../context/itemContext';
 
 function SingleItem() {
+    const {getSingleitem}=useItemContext();
+    const {id} = useParams();
+
+
+    useEffect(()=>{
+        getSingleitem(id);
+    },[id])
     return (
-        <div>
-            <h1>Single</h1>
-        </div>
+        <Wrapper>
+        </Wrapper>
     )
 }
+
+const Wrapper = styled.section`
+    background-color:teal;
+`;
 
 export default SingleItem

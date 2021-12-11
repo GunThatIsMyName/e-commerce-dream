@@ -35,7 +35,6 @@ const useFilter = (data) => {
     updateFilter();
   }, [filter]);
 
-  console.log(filteredProducts, "2");
 
   return { filteredProducts, filter, setFilter, resetFilter };
 };
