@@ -21,6 +21,10 @@ export const styleLists = [
     {id:5,name:"Keenan Constance",image:"https://images.unsplash.com/photo-1562572159-4efc207f5aff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"},
 ]
 
+export const sizeList = [
+    "220","225","230","235","240","245","250","255","260","265","270","275","280","285","290","295","300"
+]
+
 export const exchangeCurrency = (num)=>{
     return new Intl.NumberFormat('kr-KR', { style: 'currency', currency: 'KRW' }).format(num);
 }

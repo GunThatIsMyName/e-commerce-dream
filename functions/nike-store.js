@@ -6,7 +6,26 @@ const airtable = new Airtable({ apiKey: process.env.AIR_APIKYE })
   .table("products");
   
 exports.handler = async (event, context) => {
-  console.log(event);
+  const itemId = event.queryStringParameters.id;
+  if(itemId){
+      try{
+          const records = await airtable.retrieve(itemId);
+          const {id,fields:{item,description,price,brand,sizes,stocks,colors,image}}=records;
+          const singleImg = image.map(data=>data.url);
+          const singleItem = {
+            id,item,description,price,brand,sizes,stocks,colors,image:singleImg[0]
+          }
+          return {
+            statusCode:200,
+            body: JSON.stringify(singleItem)
+          }
+      }catch{
+        return {
+          statusCode:500,
+          body: "can't get Nike-shoes single data please try again"
+        }
+      }
+  }
     try{
       const {records} = await airtable.list({
         maxRecords: 50,
