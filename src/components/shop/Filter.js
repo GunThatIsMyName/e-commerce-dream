@@ -72,12 +72,11 @@ const Filter = () => {
                     filter.colors === item ? "active" : null
                   }`}
                   key={item}
-                  style={{ backgroundColor: item }}
                   data-id={item}
                   onClick={filterUpdate}
                   name="colors"
                 >
-                  {item === "all" ? "all" : null}
+                  {item}
                 </button>
               );
             })}
@@ -122,7 +121,10 @@ const Wrapper = styled.form`
       margin-right: 1rem;
     }
     span {
-      padding: 10px;
+      text-align:center;
+      width:2rem;
+      line-height:2rem;
+      height:2rem;
       display: inline-block;
       background-color: var(--color-black);
       color: var(--color-white);
@@ -134,11 +136,10 @@ const Wrapper = styled.form`
     margin-bottom: 1rem;
     .clear__btn {
       font-size: var(--font-m);
-      &:hover {
+      margin-bottom:1rem;
         color: var(--color-white);
         background-color: var(--color-black);
       }
-    }
     h5 {
       margin-bottom: 0.5rem;
       font-weight: bold;
@@ -147,13 +148,13 @@ const Wrapper = styled.form`
       margin-bottom: 1rem;
       button {
         padding: 4px 6px;
-        font-size: var(--font-l);
+        font-size: var(--font-m);
       }
     }
   }
   @media screen and (max-width: 991px) {
-    max-width: none;
     margin-bottom: 2rem;
+    max-width: none;
     .fitler__title {
       font-size: var(--font-l);
     }

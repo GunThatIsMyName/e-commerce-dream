@@ -1,24 +1,14 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { useItemContext } from "../../context/itemContext";
 import { exchangeCurrency, sizeList } from "../../utils/helps";
 import BigButton from "../BigButton";
 
-function ItemMain({
-    id,
-  brand,
-  description,
-  item,
-  price,
-  stocks,
-  colors,
-  sizes,
-  image,
-}) {
-    const {loadToCart}=useItemContext();
-  const [selectedSize, setSize] = useState(null);
-    const navigate = useNavigate();
+function ItemMain({id,brand,description,item,price,stocks,colors,sizes,image,}) {
+  const {loadToCart}=useItemContext();
+  const [selectedSize, setSize] = useState(sizes[0]);
+  const navigate = useNavigate();
   const handleBuyBtn = () => {
     if (selectedSize === null) {
       return;
@@ -134,6 +124,8 @@ const Wrapper = styled.article`
     }
   }
   .item__detail {
+    border-bottom:1px solid var(--color-grey);
+    padding-bottom:1rem;
     h5 {
       margin-bottom: 1rem;
     }

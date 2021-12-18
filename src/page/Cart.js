@@ -2,13 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import BigButton from "../components/BigButton";
 import CartCalc from "../components/CartCalc";
+import EmptyCart from "../components/EmptyCart";
 import { useItemContext } from "../context/itemContext";
 
 function Cart() {
   const { cart, deleteCartItem } = useItemContext();
 
   if (cart.length < 1) {
-    return <h1>쇼핑 목록을 추가해 주세요.</h1>;
+    return <EmptyCart/>;
   }
 
   return (
@@ -125,10 +126,20 @@ const Wrapper = styled.section`
   }
   @media screen and (max-width: 501px) {
     padding: 4rem 0rem;
+    .cart__box{
+      padding:1rem;
+    }
     .cart__item {
       .cart__item__info {
         img {
           width: 5rem;
+        }
+      }
+      .cart__item__buy{
+        .cart__item__icons{
+          .item__btn__price{
+            padding:5px;
+          }
         }
       }
     }

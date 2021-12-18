@@ -4,13 +4,14 @@ import { useAppContext } from "../../context/AppContext";
 import Shoes from "../Shoes";
 
 function Products() {
-  const { error, isLoading, filteredProducts } = useAppContext();
+  const { error, filteredProducts } = useAppContext();
 
   const noProduct = filteredProducts.length===0;
 
   if(noProduct || error){
     return <h1>필터 조건에 맞는 상품이 없습니다.</h1>
   }
+  
   return <Wrapper>
       {filteredProducts.map(item=>{
         return <Shoes key={item.id} {...item} />

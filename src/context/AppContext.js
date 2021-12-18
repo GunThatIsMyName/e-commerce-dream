@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect } from "react";
+import { createContext, useContext } from "react";
 import useFetchProducts from "../hooks/useFetchProducts";
 import useFilter from "../hooks/useFilter";
 import useFilterType from "../hooks/useFilterType";

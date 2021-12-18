@@ -1,19 +1,21 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import Loader from "../components/Loader";
 import ItemMain from "../components/singleItem/ItemMain";
 import { useItemContext } from "../context/itemContext";
 
 function SingleItem() {
-  const { handleIdMiddleware, item, isError, isLoading } = useItemContext();
+  const { handleIdMiddleware, item,  isLoading } = useItemContext();
   const { id } = useParams();
 
   useEffect(() => {
     handleIdMiddleware(id);
+    // eslint-disable-next-line
   }, [id]);
 
   if (isLoading) {
-    return <h1>LOADING ...</h1>;
+    return <Loader />;
   }
   return (
     <Wrapper>

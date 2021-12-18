@@ -6,6 +6,7 @@ function DailyStyle() {
   return (
     <Wrapper>
       <h1 className="style__title">Daily Styles !!</h1>
+
       <div className="style__box">
         {styleLists.map((item) => {
           return (
@@ -16,6 +17,7 @@ function DailyStyle() {
           );
         })}
       </div>
+      
     </Wrapper>
   );
 }

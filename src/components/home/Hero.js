@@ -9,15 +9,18 @@ const dunk3 = "image/dunk3.png";
 function Hero() {
   return (
     <Wrapper>
+      
       <div className="hero__img">
         <img src={dunk1} alt="hero-dunk1" />
         <img src={dunk3} alt="hero-dunk3" />
         <img src={dunk2} alt="hero-dunk2" />
       </div>
+
       <h1 className="hero__title">Nike Dunk </h1>
       <Link to="/shop" >
       <button>지금 거래하기 👉🏼 </button>
       </Link>
+
     </Wrapper>
   );
 }

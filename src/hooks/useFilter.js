@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 
 const useFilter = (data) => {
+
   const filterObj = {models: "all", colors: "all", prices: 0 };
   const [filteredProducts, setFilterProducts] = useState(data);
   const [filter, setFilter] = useState(filterObj);
@@ -29,10 +30,10 @@ const useFilter = (data) => {
   useEffect(() => {
     setFilterProducts(data);
   }, [data]);
-  // filter removed
 
   useEffect(() => {
     updateFilter();
+    // eslint-disable-next-line
   }, [filter]);
 
 

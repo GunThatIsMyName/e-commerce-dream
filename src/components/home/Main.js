@@ -2,13 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useAppContext } from "../../context/AppContext";
+import Loader from "../Loader";
 import Shoes from "../Shoes";
 
 function Main() {
   const { error, isLoading, products } = useAppContext();
   const mainShoes = products.slice(0, 4);
 
-  // 에러 있을경우
+  // error handler
   if (error) {
     <Wrapper>
       <p className="main__error">
@@ -24,17 +25,21 @@ function Main() {
         <p>today footwear</p>
       </div>
 
+      {isLoading && <Loader />}
+
       {!isLoading && (
         <div className="main__display">
           {mainShoes &&
             mainShoes.map((item) => <Shoes key={item.id} {...item} />)}
         </div>
       )}
+
       <div className="main__btn">
         <Link to="/shop" >
           <button>더보기</button>
         </Link>
       </div>
+
     </Wrapper>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { getUniqueName } from "../utils/helps";
 
 function useFilterType(products) {
@@ -14,6 +14,7 @@ function useFilterType(products) {
 
   useEffect(() => {
     handleKey();
+    // eslint-disable-next-line
   }, [products]);
 
   return { models, colors };

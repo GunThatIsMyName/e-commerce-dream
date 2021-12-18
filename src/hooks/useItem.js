@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import { ProductsAPI } from "../utils/Api";
 
 function useItem(id) {
@@ -8,6 +8,7 @@ function useItem(id) {
 
   const getSingleData = async () => {
       setLoading(true);
+
       try {
         const response = await fetch(`${ProductsAPI}?id=${id}`);
         const data = await response.json();
@@ -15,12 +16,16 @@ function useItem(id) {
       } catch (error) {
         setError(true);
       }
+      
       setLoading(false);
   };
+
+
   useEffect(() => {
     if (id !== null) {
       getSingleData();
     }
+    // eslint-disable-next-line
   }, [id]);
 
   return { item, isError, isLoading };

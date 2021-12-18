@@ -1,8 +1,4 @@
-import React, { useEffect, useState } from 'react'
-
-
-// 앱이 켜질때 구동하는 fetch 함수
-// 모든 데이터를 받아와서 저장 한다. 
+import  { useEffect, useState } from 'react'
 
 const useFetchProducts=(apiendPoint)=> {
     const [error,setError]=useState(false);
@@ -12,6 +8,7 @@ const useFetchProducts=(apiendPoint)=> {
     const getData =async()=>{
         setLoading(true);
         setError(false);
+
         try{
             const response = await fetch(apiendPoint);
             const data = await response.json();
@@ -19,11 +16,13 @@ const useFetchProducts=(apiendPoint)=> {
         }catch(error){
             setError(true);
         }
+        
         setLoading(false);
     }
 
     useEffect(()=>{
         getData();
+        // eslint-disable-next-line
     },[])
 
     return {error,products,isLoading}

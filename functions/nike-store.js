@@ -7,6 +7,8 @@ const airtable = new Airtable({ apiKey: process.env.AIR_APIKYE })
   
 exports.handler = async (event, context) => {
   const itemId = event.queryStringParameters.id;
+
+  // single item fetch
   if(itemId){
       try{
           const records = await airtable.retrieve(itemId);
@@ -26,6 +28,8 @@ exports.handler = async (event, context) => {
         }
       }
   }
+  
+  // all itmes fetch
     try{
       const {records} = await airtable.list({
         maxRecords: 50,

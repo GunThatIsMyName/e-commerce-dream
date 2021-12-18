@@ -42,6 +42,7 @@ const ItemProvider = ({children})=>{
     }
     useEffect(()=>{
         saveToLocal();
+        // eslint-disable-next-line
     },[cart])
 
 
