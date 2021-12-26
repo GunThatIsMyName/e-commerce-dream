@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { ShopAd } from "../components";
-import CartCalc from "../components/CartCalc";
-import CartItem from "../components/CartItem";
-import EmptyCart from "../components/EmptyCart";
+import { CartCalc, CartItem, EmptyCart, ShopAd } from "../components";
+
 import { useItemContext } from "../context/itemContext";
 
 function Cart() {
@@ -12,9 +10,12 @@ function Cart() {
   return (
     <Wrapper>
       <ShopAd />
-      <h1 className="cart__title">쇼핑 목록</h1>
-
+      <h1 className="cart__title">쇼핑 목록</h1>  
+      
+      {/* Empty Cart */}
       {cart.length < 1 && <EmptyCart />}
+
+      {/* Cart item */}
       {cart.length >= 1 && (
         <>
           <main className="cart__box">

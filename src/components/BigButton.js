@@ -14,21 +14,22 @@ function BigButton({ price, handleBuyBtn }) {
 }
 
 const Wrapper = styled.div`
-  background-color: #41b979;
+  background-color: var(--color-yellow);
   display: inline-block;
-  border: 1px solid black;
+  border: 1px solid var(--color-black);
   font-size: var(--font-xxl);
   border-radius: 10px;
-  color: var(--color-white);
+  color: var(--color-black);
   font-size: var(--font-l);
   border: none;
   margin-bottom: 1rem;
+  cursor: pointer;
   .btn__box {
     display: flex;
     align-items: center;
     .item__btn__title {
       padding: 1rem;
-      border-right: 1px solid var(--color-grey);
+      border-right: 1px solid var(--color-black);
     }
     .item__btn__price {
       padding: 1rem;

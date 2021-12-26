@@ -9,7 +9,7 @@ function Products() {
   const noProduct = filteredProducts.length===0;
 
   if(noProduct || error){
-    return <h1>필터 조건에 맞는 상품이 없습니다.</h1>
+    return <NoProductItem>필터 조건에 맞는 상품이 없습니다.  😀</NoProductItem>
   }
   
   return <Wrapper>
@@ -25,13 +25,18 @@ const Wrapper = styled.section`
   grid-gap:1rem;
   margin-bottom:3rem;
   @media screen and (max-width:1220px){
-    margin:2rem;
+    margin:1rem 2rem;
     grid-template-columns:repeat(3,1fr);
   }
   @media screen and (max-width:501px){
-    margin:2rem 1rem;
+    margin:2rem;
     grid-template-columns:repeat(2,1fr);
   }
+`;
+
+const NoProductItem = styled.h1`
+  text-align:center;
+  font-size:2rem;
 `;
 
 export default Products;

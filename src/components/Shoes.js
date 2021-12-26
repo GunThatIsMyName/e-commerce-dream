@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import styled from 'styled-components'
 import { exchangeCurrency } from '../utils/helps';
+import styled from 'styled-components'
 
 function Shoes({id,colors,brand,description,image,price,siezes,stocks,item}) {
     return (

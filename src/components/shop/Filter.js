@@ -2,7 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { useAppContext } from "../../context/AppContext";
 import { priceList } from "../../utils/helps";
-import "../../filter.css";
+import "../../styles/filter.css";
+
 const Filter = () => {
   const { models, colors, filter, setFilter, resetFilter } = useAppContext();
 
@@ -108,8 +109,9 @@ const Filter = () => {
 };
 
 const Wrapper = styled.form`
-  background-color: #fafafa;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   max-width: 300px;
+  border-radius:5px;
   padding: 1rem;
   height: fit-content;
   .filter__header {
@@ -121,10 +123,10 @@ const Wrapper = styled.form`
       margin-right: 1rem;
     }
     span {
-      text-align:center;
-      width:2rem;
-      line-height:2rem;
-      height:2rem;
+      text-align: center;
+      width: 2rem;
+      line-height: 2rem;
+      height: 2rem;
       display: inline-block;
       background-color: var(--color-black);
       color: var(--color-white);
@@ -136,10 +138,10 @@ const Wrapper = styled.form`
     margin-bottom: 1rem;
     .clear__btn {
       font-size: var(--font-m);
-      margin-bottom:1rem;
-        color: var(--color-white);
-        background-color: var(--color-black);
-      }
+      margin-bottom: 1rem;
+      color: var(--color-white);
+      background-color: var(--color-black);
+    }
     h5 {
       margin-bottom: 0.5rem;
       font-weight: bold;
@@ -151,6 +153,9 @@ const Wrapper = styled.form`
         font-size: var(--font-m);
       }
     }
+  }
+  @media screen and (max-width: 1240px) {
+    margin:1rem;
   }
   @media screen and (max-width: 991px) {
     margin-bottom: 2rem;
@@ -166,6 +171,11 @@ const Wrapper = styled.form`
           font-size: var(--font-m);
         }
       }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .filter__box{
+      grid-template-columns: 1fr;
     }
   }
 `;

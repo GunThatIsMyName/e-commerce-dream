@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAppContext } from "../../context/AppContext";
-import styled from "styled-components";
 import { Loader, Shoes } from "..";
+import styled from "styled-components";
 
 function Main() {
   const { error, isLoading, products } = useAppContext();

@@ -83,3 +83,22 @@ export const exchangeCurrency = (num) => {
     currency: "KRW",
   }).format(num);
 };
+
+
+export const consoleAlert=()=>{
+  console.log(
+    "%c혹시 npm run start 실행 하셨나요?",
+    "background-color: yellow ; color: black ; font-weight: bold ; " +
+      "font-size: 20px ; font-style: italic ; "
+  );
+  console.log(
+    "%cnetlify serverless functions 데이터를 못받아 옵니다!!!",
+    "background-color: yellow ; color: black ; font-weight: bold ; " +
+      "font-size: 20px ; font-style: italic ; "
+  );
+  console.log(
+    "%c npm run netlify 를 이용해서 localhost:8888 을 이용해주세요 감사합니다",
+    "background-color: yellow ; color: red ; font-weight: bold ; " +
+      "font-size: 20px ; font-style: italic ; "
+  );
+}

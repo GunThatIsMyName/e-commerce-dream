@@ -12,5 +12,9 @@ import ShopAd from "./shop/ShopAd";
 
 import Loader from "./Loader";
 import Shoes from "./Shoes";
+import CartCalc from "./CartCalc";
+import CartItem from "./CartItem";
+import EmptyCart from "./EmptyCart";
+import BigButton from "./BigButton";
 
-export { DailyStyle, Hero, Main, Filter, Products, ShopAd,Loader,Shoes };
+export { BigButton,DailyStyle, Hero, Main, Filter, Products, ShopAd,Loader,Shoes ,CartCalc,CartItem,EmptyCart};

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
+import styled from "styled-components";
 const logo = "image/yellow2.png";
 
 function Header() {

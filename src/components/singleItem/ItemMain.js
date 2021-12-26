@@ -1,19 +1,37 @@
 import React, { useState } from "react";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { BigButton } from "..";
 import { useItemContext } from "../../context/itemContext";
 import { exchangeCurrency, sizeList } from "../../utils/helps";
-import BigButton from "../BigButton";
 
-function ItemMain({id,brand,description,item,price,stocks,colors,sizes,image,}) {
-  const {loadToCart}=useItemContext();
+function ItemMain({
+  id,
+  brand,
+  description,
+  item,
+  price,
+  stocks,
+  colors,
+  sizes,
+  image,
+}) {
+  const { loadToCart } = useItemContext();
   const [selectedSize, setSize] = useState(sizes[0]);
   const navigate = useNavigate();
   const handleBuyBtn = () => {
     if (selectedSize === null) {
       return;
     }
-    const cartItem={selectedSize,image,brand,item,price,description,id}
+    const cartItem = {
+      selectedSize,
+      image,
+      brand,
+      item,
+      price,
+      description,
+      id,
+    };
     loadToCart(cartItem);
     navigate("/cart");
   };
@@ -69,7 +87,7 @@ function ItemMain({id,brand,description,item,price,stocks,colors,sizes,image,}) 
       </div>
 
       <div className="item__link">
-          <BigButton  price={price} handleBuyBtn={handleBuyBtn} />
+        <BigButton price={price} handleBuyBtn={handleBuyBtn} />
       </div>
     </Wrapper>
   );
@@ -124,8 +142,8 @@ const Wrapper = styled.article`
     }
   }
   .item__detail {
-    border-bottom:1px solid var(--color-grey);
-    padding-bottom:1rem;
+    border-bottom: 1px solid var(--color-grey);
+    padding-bottom: 1rem;
     h5 {
       margin-bottom: 1rem;
     }
@@ -147,7 +165,7 @@ const Wrapper = styled.article`
     }
   }
   .item__link {
-      cursor: pointer;
+    cursor: pointer;
     margin: 2rem;
   }
 `;

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import BigButton from "./BigButton";
+import { BigButton } from ".";
 
 function CartItem({
   id,
