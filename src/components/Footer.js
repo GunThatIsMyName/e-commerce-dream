@@ -8,6 +8,8 @@ function Footer() {
         @{new Date().getFullYear()}
         <br />
         No Copyright This is Demo
+        <br />
+        Made By Junhyun
       </h1>
     </Wrapper>
   );

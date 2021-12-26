@@ -8,4 +8,9 @@ import Filter from "./shop/Filter";
 import Products from "./shop/Products";
 import ShopAd from "./shop/ShopAd";
 
-export { DailyStyle, Hero, Main, Filter, Products, ShopAd };
+// components
+
+import Loader from "./Loader";
+import Shoes from "./Shoes";
+
+export { DailyStyle, Hero, Main, Filter, Products, ShopAd,Loader,Shoes };

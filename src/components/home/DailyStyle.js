@@ -30,6 +30,7 @@ const Wrapper = styled.section`
     font-size: var(--font-xl);
     margin-bottom: 2rem;
     font-weight:bold;
+    text-align:center;
   }
   .style__box {
     display: grid;
@@ -59,7 +60,7 @@ const Wrapper = styled.section`
     }
     .style__box {
       grid-template-columns: 1fr 1fr;
-      .style__item:not(:first-child, :nth-child(2)) {
+      .style__item:last-child {
         display: none;
       }
     }

@@ -1,10 +1,9 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Cart from "./page/Cart";
-import Home from "./page/Home";
-import Shop from "./page/Shop";
-import SingleItem from "./page/SingleItem";
+import { Cart, Home, Shop, SingleItem } from "./page";
+
+
 
 function App() {
   return (

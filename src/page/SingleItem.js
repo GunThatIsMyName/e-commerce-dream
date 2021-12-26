@@ -38,6 +38,8 @@ const Wrapper = styled.section`
   padding:0 2rem;
   .item__img {
     background-color: #FFE694;
+    border-radius:5px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     padding: 6rem 0;
     img {
       width: 100%;

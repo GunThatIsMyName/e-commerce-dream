@@ -20,10 +20,15 @@ function Shoes({id,colors,brand,description,image,price,siezes,stocks,item}) {
 
 const Wrapper = styled.article`
     img{
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
         border-radius:var(--font-s);
         background-color:#F3EADA;
         width:100%;
         margin-bottom:1rem;
+        transition:0.1s linear;
+        &:hover{
+            transform:translateY(-5px);
+        }
     }
     .shoe__brand{
         font-size:var(--font-l);

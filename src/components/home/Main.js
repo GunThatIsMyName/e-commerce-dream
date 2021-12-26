@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
 import { useAppContext } from "../../context/AppContext";
-import Loader from "../Loader";
-import Shoes from "../Shoes";
+import styled from "styled-components";
+import { Loader, Shoes } from "..";
 
 function Main() {
   const { error, isLoading, products } = useAppContext();
@@ -50,6 +49,7 @@ const Wrapper = styled.section`
   margin:4rem auto;
   .main__title{
     margin-bottom:2rem;
+    text-align:center;
     h1{
       font-size:var(--font-xl);
       font-weight:bold;

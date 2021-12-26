@@ -156,6 +156,10 @@ button {
   --color-grey: #c7c7c7;
   --color-greyf4: #f4f3f1;
 
+  --color-orange:#ff8669;
+  --color-skin:#ffe6d6;
+  
+
   /* box shadow */
   --box-shadow-1: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
 }

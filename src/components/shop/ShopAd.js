@@ -33,7 +33,7 @@ margin-bottom:2rem;
     }
   }
   @media screen and (max-width:768px){
-    background: #C5D2CB;
+    background: var(--color-ligthgrey);
     .ad__box{
       padding:2rem 1rem;
       .ad__title{

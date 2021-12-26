@@ -1,21 +1,17 @@
 import React from "react";
-import styled from "styled-components";
 import { DailyStyle, Hero, Main } from "../components";
 
 
 function Home() {
-
   return (
-    <Wrapper>
+    <section>
       <Hero />
       <Main />
       <DailyStyle />
-    </Wrapper>
+    </section>
   );
 }
 
-const Wrapper = styled.header`
-`;
 
 
 export default Home;
