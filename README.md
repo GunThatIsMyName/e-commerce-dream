@@ -3,7 +3,7 @@
 ## 1️⃣Demo link 🖥 :
 Yello Sneakers [사이트 링크](https://sneakers-site.netlify.app/)
 
-## 2️⃣Hello Meta 사이트 에 대해서
+## 2️⃣e-commerce 사이트 에 대해서
 신발 플랫폼 입니다. netlify serverless 를 사용해서 신발 data를 받아옵니다. <br/>
 신발을 둘러보며 마음에 드는 신발을 장바구니에 담을 수 있고 삭제 할 수 있습니다.<br/>
 장바구니에 담아둔 신발은 locastorage 에 저장됩니다.
